@@ -198,8 +198,8 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {[
-              { label: 'Email', value: 'hello@alexdoe.com', href: 'mailto:hello@alexdoe.com' },
-              { label: 'LinkedIn', value: 'linkedin.com/in/alexdoe', href: '#' },
+              { label: 'Email', value: 'nchobanzada@gmail.com', href: 'mailto:nchobanzada@gmail.com' },
+              { label: 'LinkedIn', value: 'linkedin.com/in/nazrinchobanzada', href: '#' },
               
             ].map(link => (
               <a key={link.label} href={link.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 1.25rem', border: '1px solid #3A3630', color: 'var(--cream)', fontSize: '14px', transition: 'all .2s' }}
