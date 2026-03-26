@@ -20,7 +20,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section style={{ padding: '6rem 3rem 0' }}>
+      <section style={{ padding: '1.5 rem 1 rem 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '3rem' }}>
           <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />
           <span style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase' }}>
@@ -28,12 +28,12 @@ export default function Home() {
           </span>
         </div>
 
-        <h1 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2.8rem,7vw,5.5rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '800px', marginBottom: '2.5rem' }}>
+        <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2.4rem,7vw,5.5rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '800px', marginBottom: '2.5rem' }}>
           Hello, I&apos;m Nazrin —<br />
           a product designer<br />
           <span style={{ color: 'var(--muted)', fontWeight: 300 }}>crafting experiences</span><br />
           <span style={{ color: 'var(--muted)', fontWeight: 300 }}>people love.</span>
-        </h1>
+        </h2>
 
         <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: 1.9, fontWeight: 300, maxWidth: '480px', marginBottom: '2.5rem' }}>
           I turn complex problems into clear, elegant interfaces — currently open to full-time roles and freelance.
