@@ -154,8 +154,8 @@ export default function Home() {
           <div>
             <div style={{ fontSize: '12px', letterSpacing: '0.12em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Work History</div>
             {[
-              { year: '2022 — Present', role: 'Senior Product Designer', company: 'Acme Corp · Full-time', desc: 'Led end-to-end design for a SaaS analytics platform used by 50,000+ teams globally.' },
-              { year: '2020 — 2022', role: 'UX Designer', company: 'StartupXYZ · Full-time', desc: 'Designed the mobile onboarding experience, improving activation rate by 34%.' },
+              { year: '2023 — Present', role: 'Head of UX/UI Design', company: 'Digital Umbrella · Full-time', desc: 'Led end-to-end design for a SaaS analytics platform used by 50,000+ teams globally.' },
+              { year: '2022 — 2023', role: 'UX/UI Designer', company: 'International Bank of Azerbaijan · Full-time', desc: 'Designed the mobile onboarding experience, improving activation rate by 34%.' },
               { year: '2018 — 2020', role: 'UI/UX Designer', company: 'Design Studio · Full-time', desc: 'Worked across brand identity, web design, and interactive prototypes for agency clients.' },
             ].map(item => (
               <div key={item.year} style={{ borderLeft: '2px solid var(--border)', paddingLeft: '1.25rem', marginBottom: '1.75rem', position: 'relative' }}>
@@ -200,7 +200,7 @@ export default function Home() {
             {[
               { label: 'Email', value: 'hello@alexdoe.com', href: 'mailto:hello@alexdoe.com' },
               { label: 'LinkedIn', value: 'linkedin.com/in/alexdoe', href: '#' },
-              { label: 'Behance', value: 'behance.net/alexdoe', href: '#' },
+              
             ].map(link => (
               <a key={link.label} href={link.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 1.25rem', border: '1px solid #3A3630', color: 'var(--cream)', fontSize: '14px', transition: 'all .2s' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; }}
@@ -215,7 +215,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer style={{ padding: '2rem 3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <p style={{ fontSize: '12px', color: 'var(--muted)' }}>© 2026 Alex Doe. All rights reserved.</p>
+        <p style={{ fontSize: '12px', color: 'var(--muted)' }}>© 2026 Nazrin Chobanzada. All rights reserved.</p>
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>Designed with care.</p>
       </footer>
     </>
