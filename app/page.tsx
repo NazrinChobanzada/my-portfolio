@@ -88,7 +88,7 @@ export default function Home() {
             { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'ArchieveX', desc: 'Reducing drop-off by simplifying the purchase experience' },
 
           ].map(card => (
-            <div key={card.title} style={{ background: 'var(--warm)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', transition: 'transform .3s' }}
+            <a key={card.title} href={card.link} target="_blank" rel="noopener noreferrer" style={{ background: 'var(--warm)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', transition: 'transform .3s', display: 'block', textDecoration: 'none', color: 'inherit' }}
               onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-4px)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}>
               <div style={{ height: '220px', background: card.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
@@ -100,7 +100,7 @@ export default function Home() {
                 <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300 }}>{card.desc}</p>
                 <span style={{ display: 'inline-block', marginTop: '0.8rem', fontSize: '13px', color: 'var(--accent)' }}>View case study →</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
