@@ -9,7 +9,7 @@ export default function Home() {
         padding: '1.5rem 3rem', borderBottom: '1px solid var(--border)',
         background: 'var(--cream)', position: 'sticky', top: 0, zIndex: 100
       }}>
-        <div style={{ fontFamily: 'var(--ff-display)', fontSize: '20px' }}>Nazrin Chobanzada</div>
+        <div style={{ fontFamily: 'var(--ff-display)', fontSize: '20px' }}>Nazrin. </div>
         <div style={{ display: 'flex', gap: '2rem' }}>
           {['Work', 'About', 'Experience', 'Contact'].map(item => (
             <a key={item} href={`#${item.toLowerCase()}`} style={{ color: 'var(--muted)', fontSize: '13px', letterSpacing: '0.05em' }}>
@@ -21,7 +21,7 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ padding: '6rem 3rem 0' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '3rem' }}>
           <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />
           <span style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase' }}>
             Available for work
