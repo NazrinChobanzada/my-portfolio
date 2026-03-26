@@ -20,7 +20,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section style={{ padding: '1.5 rem 1 rem 0' }}>
+      <section style={{ padding: '1.5rem 1rem 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '3rem' }}>
           <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />
           <span style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase' }}>
