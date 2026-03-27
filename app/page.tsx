@@ -1,5 +1,7 @@
 "use client";
 
+import { link } from "fs";
+
 export default function Home() {
   return (
     <div className="page-fade">
@@ -91,9 +93,9 @@ export default function Home() {
         <div id="work-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {[
             { num: '01', bg: '#E8E2D9', tag: 'Mobile App', title: 'Yonca app', desc: 'Redesigning personal finance tracking for clarity and calm', link: 'https://yohttps://play.google.com/store/apps/details?id=az.yonca&hl=en' },
-            { num: '02', bg: '#DFD8CE', tag: 'SaaS Platform', title: 'Design System', desc: 'Building a scalable component library for an enterprise product' },
-            { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'Checkout Flow', desc: 'Reducing drop-off by simplifying the purchase experience' },
-            { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'ŞNES', desc: 'Reducing drop-off by simplifying the purchase experience' },
+            { num: '02', bg: '#DFD8CE', tag: 'SaaS Platform', title: 'Design System', desc: 'Building a scalable component library for an enterprise product', link: '/work/finance-dashboard' },
+            { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'Checkout Flow', desc: 'Reducing drop-off by simplifying the purchase experience', link: '/work/design-system' },
+            { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'ŞNES', desc: 'Reducing drop-off by simplifying the purchase experience', link: '/work/checkout-flow' },
             { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'DeltaLogic', desc: 'Reducing drop-off by simplifying the purchase experience' },
             { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'ArchieveX', desc: 'Reducing drop-off by simplifying the purchase experience' },
 
