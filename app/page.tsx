@@ -69,17 +69,15 @@ export default function Home() {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        @keyframes fadeUp {
-          from { opacity: 0; filter: blur(12px); transform: translateY(24px); }
-          to { opacity: 1; filter: blur(0); transform: translateY(0); }
+        .work-card {
+          filter: blur(2px);
+          opacity: 0.6;
+          transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
         }
-        .reveal {
-          animation: fadeUp 0.7s ease forwards;
-          opacity: 0;
-        }
-        .reveal:nth-child(1) { animation-delay: 0s; }
-        .reveal:nth-child(2) { animation-delay: 0.1s; }
-        .reveal:nth-child(3) { animation-delay: 0.2s; }
+        .work-card:hover {
+          filter: blur(0);
+          opacity: 1;
+          transform: translateY(-4px);
         }
       `}</style>
      
@@ -100,9 +98,7 @@ export default function Home() {
             { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'ArchieveX', desc: 'Reducing drop-off by simplifying the purchase experience' },
 
           ].map(card => (
-            <a key={card.title} href={card.link} target="_blank" className="reveal" rel="noopener noreferrer" style={{ background: 'var(--warm)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', transition: 'transform .3s', display: 'block', textDecoration: 'none', color: 'inherit' }}
-              onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-4px)')}
-              onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}>
+            <a key={card.title} href={card.link} target="_blank" className="work-card" rel="noopener noreferrer" style={{ background: 'var(--warm)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <div style={{ height: '220px', background: card.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
                 <span style={{ fontFamily: 'var(--ff-display)', fontSize: '3rem', color: 'var(--border)', fontStyle: 'normal' }}>{card.num}</span>
                 <span style={{ position: 'absolute', top: '1rem', left: '1rem', background: 'var(--cream)', padding: '4px 10px', fontSize: '11px', letterSpacing: '0.1em', color: 'var(--muted)' }}>{card.tag}</span>
@@ -230,20 +226,8 @@ export default function Home() {
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>© 2026 Nazrin Chobanzada. All rights reserved.</p>
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>Designed with care.</p>
       </footer>
-      <script dangerouslySetInnerHTML={{ __html: `
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.style.animationPlayState = 'running';
-            }
-          });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => {
-          el.style.animationPlayState = 'paused';
-          observer.observe(el);
-        });
-      `}} />
+      
+  
     </>
   );
 }
