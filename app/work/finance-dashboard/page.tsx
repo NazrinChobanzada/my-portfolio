@@ -28,27 +28,27 @@ export default function FinanceDashboard() {
         background: 'var(--cream)', position: 'sticky', top: 0, zIndex: 100
       }}>
         <Link href="/" style={{ fontFamily: 'var(--ff-display)', fontSize: '20px', textDecoration: 'none', color: 'var(--dark)' }}>
-          Alex Doe
+          Nazrin.
         </Link>
         <Link href="/#work" className="nav-link" style={{ fontSize: '13px', color: 'var(--muted)', textDecoration: 'none', letterSpacing: '0.05em' }}>
-          ← Back to work
+          ← Back to works
         </Link>
       </nav>
 
       {/* HEADER */}
       <section style={{ padding: '5rem 3rem 3rem' }}>
         <div style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1rem' }}>
-          Mobile App · 2024
+          Mobile App · 2023
         </div>
         <h1 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '3rem', maxWidth: '700px' }}>
-          Finance Dashboard
+          Yonca Android App
         </h1>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0', borderTop: '1px solid var(--border)' }}>
           {[
-            { label: 'Role', value: 'Lead UX Designer' },
+            { label: 'Role', value: 'UX/UI  Designer' },
             { label: 'Duration', value: '3 months' },
             { label: 'Tools', value: 'Figma, Miro' },
-            { label: 'Year', value: '2024' },
+            { label: 'Year', value: '2023' },
           ].map((item, i) => (
             <div key={item.label} style={{ padding: '1.25rem 0', borderRight: i < 3 ? '1px solid var(--border)' : 'none', paddingRight: '2rem', paddingLeft: i > 0 ? '2rem' : '0' }}>
               <div style={{ fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>{item.label}</div>
@@ -189,7 +189,7 @@ export default function FinanceDashboard() {
 
       {/* FOOTER */}
       <footer style={{ padding: '2rem 3rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <p style={{ fontSize: '12px', color: 'var(--muted)' }}>© 2026 Alex Doe. All rights reserved.</p>
+        <p style={{ fontSize: '12px', color: 'var(--muted)' }}>© 2026 Nazrin Chobanzada. All rights reserved.</p>
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>Designed with care.</p>
       </footer>
     </>
