@@ -227,7 +227,16 @@ export default function Home() {
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>Designed with care.</p>
       </footer>
       
-  
+    <div style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: '200px',
+        background: 'linear-gradient(to bottom, transparent, var(--cream))',
+        pointerEvents: 'none',
+        zIndex: 50
+      }} />
     </div>
   );
 }
