@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <>
+    <div className="page-fade">
       {/* NAV */}
       <nav style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -228,6 +228,6 @@ export default function Home() {
       </footer>
       
   
-    </>
+    </div>
   );
 }
