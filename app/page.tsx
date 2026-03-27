@@ -69,6 +69,18 @@ export default function Home() {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
+        @keyframes fadeUp {
+          from { opacity: 0; filter: blur(12px); transform: translateY(24px); }
+          to { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
+        .reveal {
+          animation: fadeUp 0.7s ease forwards;
+          opacity: 0;
+        }
+        .reveal:nth-child(1) { animation-delay: 0s; }
+        .reveal:nth-child(2) { animation-delay: 0.1s; }
+        .reveal:nth-child(3) { animation-delay: 0.2s; }
+        }
       `}</style>
      
 
@@ -78,7 +90,7 @@ export default function Home() {
           <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: '2rem', fontWeight: 400 }}>Selected Work</h2>
           <span style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em' }}>03 Projects</span>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div id="work-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {[
             { num: '01', bg: '#E8E2D9', tag: 'Mobile App', title: 'Yonca app', desc: 'Redesigning personal finance tracking for clarity and calm', link: 'https://yohttps://play.google.com/store/apps/details?id=az.yonca&hl=en' },
             { num: '02', bg: '#DFD8CE', tag: 'SaaS Platform', title: 'Design System', desc: 'Building a scalable component library for an enterprise product' },
@@ -88,7 +100,7 @@ export default function Home() {
             { num: '03', bg: '#D8D0C4', tag: 'E-commerce', title: 'ArchieveX', desc: 'Reducing drop-off by simplifying the purchase experience' },
 
           ].map(card => (
-            <a key={card.title} href={card.link} target="_blank" rel="noopener noreferrer" style={{ background: 'var(--warm)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', transition: 'transform .3s', display: 'block', textDecoration: 'none', color: 'inherit' }}
+            <a key={card.title} href={card.link} target="_blank" className="reveal" rel="noopener noreferrer" style={{ background: 'var(--warm)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', transition: 'transform .3s', display: 'block', textDecoration: 'none', color: 'inherit' }}
               onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-4px)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}>
               <div style={{ height: '220px', background: card.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
@@ -218,6 +230,20 @@ export default function Home() {
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>© 2026 Nazrin Chobanzada. All rights reserved.</p>
         <p style={{ fontSize: '12px', color: 'var(--muted)' }}>Designed with care.</p>
       </footer>
+      <script dangerouslySetInnerHTML={{ __html: `
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationPlayState = 'running';
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+          el.style.animationPlayState = 'paused';
+          observer.observe(el);
+        });
+      `}} />
     </>
   );
 }
