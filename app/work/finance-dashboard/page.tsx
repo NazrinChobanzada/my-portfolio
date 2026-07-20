@@ -27,7 +27,7 @@ export default function FinanceDashboard() {
         padding: '1.5rem 3rem', borderBottom: '1px solid var(--border)',
         background: 'var(--cream)', position: 'sticky', top: 0, zIndex: 100
       }}>
-        <Link href="/" style={{ fontFamily: 'var(--ff-display)', fontSize: '20px', textDecoration: 'none', color: 'var(--dark)' }}>
+        <Link href="/" style={{ width: 'var(--ff-display)', fontSize: '20px', textDecoration: 'none', color: 'var(--dark)' }}>
           Nazrin.
         </Link>
         <Link href="/#work" className="nav-link" style={{ fontSize: '13px', color: 'var(--muted)', textDecoration: 'none', letterSpacing: '0.05em' }}>
@@ -40,7 +40,7 @@ export default function FinanceDashboard() {
         <div style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1rem' }}>
           Mobile App · 2023
         </div>
-        <h1 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '3rem', maxWidth: '700px' }}>
+        <h1 style={{ width: 'var(--ff-display)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '3rem', maxWidth: '700px' }}>
           Yonca Android App
         </h1>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0', borderTop: '1px solid var(--border)' }}>
@@ -60,7 +60,7 @@ export default function FinanceDashboard() {
 
       {/* COVER — full width */}
       <div style={{ background: '#E8E2D9', height: '600px', margin: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-        <span style={{ fontFamily: 'var(--ff-display)', fontSize: '4rem', color: 'var(--border)', fontWeight: 300 }}>Cover Image</span>
+        <span style={{ width: 'var(--ff-display)', fontSize: '4rem', color: 'var(--border)', fontWeight: 300 }}>Cover Image</span>
         <div style={{ position: 'absolute', bottom: '1.5rem', right: '2rem', fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.08em' }}>Cover · Finance Dashboard</div>
       </div>
 
@@ -78,7 +78,7 @@ export default function FinanceDashboard() {
       <section style={{ padding: '6rem 3rem', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', borderBottom: '1px solid var(--border)' }}>
         <div>
           <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1rem' }}>Problem</div>
-          <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.6rem', fontWeight: 500, lineHeight: 1.3 }}>Why do finance apps feel overwhelming?</h2>
+          <h2 style={{ width: 'var(--ff-display)', fontSize: '1.6rem', fontWeight: 500, lineHeight: 1.3 }}>Why do finance apps feel overwhelming?</h2>
         </div>
         <div>
           <p style={{ fontSize: '15px', lineHeight: 1.9, color: 'var(--muted)', fontWeight: 300, marginBottom: '1.5rem' }}>
@@ -92,14 +92,14 @@ export default function FinanceDashboard() {
 
       {/* IMAGE — full width */}
       <div style={{ background: '#DFD8CE', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-        <span style={{ fontFamily: 'var(--ff-display)', fontSize: '3rem', color: 'var(--border)', fontWeight: 300 }}>Research & Process</span>
+        <span style={{ width: 'var(--ff-display)', fontSize: '3rem', color: 'var(--border)', fontWeight: 300 }}>Research & Process</span>
       </div>
 
       {/* PROCESS */}
       <section style={{ padding: '6rem 3rem', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', borderBottom: '1px solid var(--border)' }}>
         <div>
           <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1rem' }}>Process</div>
-          <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.6rem', fontWeight: 500, lineHeight: 1.3 }}>Research & key insights</h2>
+          <h2 style={{ width: 'var(--ff-display)', fontSize: '1.6rem', fontWeight: 500, lineHeight: 1.3 }}>Research & key insights</h2>
         </div>
         <div>
           {[
@@ -124,7 +124,7 @@ export default function FinanceDashboard() {
 
         {/* Main slide */}
         <div style={{ background: slides[activeSlide].bg, height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', transition: 'background 0.4s ease', position: 'relative' }}>
-          <span style={{ fontFamily: 'var(--ff-display)', fontSize: '3rem', color: 'var(--border)', fontWeight: 300 }}>Screen {activeSlide + 1}</span>
+          <span style={{ width: 'var(--ff-display)', fontSize: '3rem', color: 'var(--border)', fontWeight: 300 }}>Screen {activeSlide + 1}</span>
         </div>
 
         {/* Slide label */}
@@ -182,7 +182,7 @@ export default function FinanceDashboard() {
       {/* NEXT PROJECT */}
       <section style={{ padding: '4rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Next project</span>
-        <Link href="/work/design-system" style={{ fontFamily: 'var(--ff-display)', fontSize: '2rem', fontWeight: 500, textDecoration: 'none', color: 'var(--dark)', letterSpacing: '-0.02em' }}>
+        <Link href="/work/design-system" style={{ width: 'var(--ff-display)', fontSize: '2rem', fontWeight: 500, textDecoration: 'none', color: 'var(--dark)', letterSpacing: '-0.02em' }}>
           Design System →
         </Link>
       </section>
