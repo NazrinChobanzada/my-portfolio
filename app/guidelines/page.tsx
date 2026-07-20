@@ -61,7 +61,7 @@ export default function Guidelines() {
       {/* HERO */}
       <section style={{ padding: '5rem 5rem 4rem', textAlign: 'center', borderBottom: '1px solid var(--border)', background: 'var(--warm)' }}>
         <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase', marginBottom: '1rem' }}>A living reference for design decisions</div>
-        <h1 style={{ width: 'var(--ff-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>
+        <h1 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>
           Component guidelines,<br />
           <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>documented.</span>
         </h1>
@@ -113,7 +113,7 @@ export default function Guidelines() {
               onClick={() => setSelected(comp.id)}
               style={{ border: '1px solid var(--border)', padding: '1.5rem', background: 'var(--cream)', cursor: 'pointer', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{comp.category}</div>
-              <h3 style={{ width: 'var(--ff-display)', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.5rem' }}>{comp.title}</h3>
+              <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.5rem' }}>{comp.title}</h3>
               <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.7 }}>{comp.desc}</p>
               <div style={{ marginTop: '1rem', fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.05em' }}>View guidelines →</div>
             </div>
@@ -127,7 +127,7 @@ export default function Guidelines() {
           <div style={{ padding: '1.5rem 2rem', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'var(--cream)', zIndex: 1 }}>
             <div>
               <div style={{ fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>{selectedComponent.category}</div>
-              <div style={{ width: 'var(--ff-display)', fontSize: '1.4rem', fontWeight: 500 }}>{selectedComponent.title}</div>
+              <div style={{ fontFamily: 'var(--ff-display)', fontSize: '1.4rem', fontWeight: 500 }}>{selectedComponent.title}</div>
             </div>
             <button className="close-btn" onClick={() => setSelected(null)}
               style={{ background: 'transparent', border: '1px solid var(--border)', width: '36px', height: '36px', cursor: 'pointer', fontSize: '16px', color: 'var(--muted)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s' }}>
