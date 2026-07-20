@@ -76,7 +76,7 @@ export default function Guidelines() {
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search components... e.g. button, modal, table"
-            style={{ width: '100%', padding: '0.9rem 1rem 0.9rem 2.5rem', border: '1px solid var(--border)', background: 'var(--cream)', fontSize: '14px', color: 'var(--dark)', width: 'var(--ff-body)', outline: 'none', borderRadius: '4px', boxSizing: 'border-box' }}
+            style={{ fontFamily: '100%', padding: '0.9rem 1rem 0.9rem 2.5rem', border: '1px solid var(--border)', background: 'var(--cream)', fontSize: '14px', color: 'var(--dark)', width: 'var(--ff-body)', outline: 'none', borderRadius: '4px', boxSizing: 'border-box' }}
           />
         </div>
       </section>
