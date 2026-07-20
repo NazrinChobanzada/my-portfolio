@@ -93,8 +93,7 @@ export default function Guidelines() {
                 padding: '0.5rem 1.25rem', border: '1px solid var(--border)', fontSize: '13px',
                 background: activeCategory === cat ? 'var(--dark)' : 'var(--cream)',
                 color: activeCategory === cat ? 'var(--cream)' : 'var(--muted)',
-                cursor: 'pointer', width: 'var(--ff-body)', borderRadius: '4px',
-                fontWeight: activeCategory === cat ? 500 : 300,
+                cursor: 'pointer', fontFamily: 'var(--ff-body)', borderRadius: '4px',                 fontWeight: activeCategory === cat ? 500 : 300,
               }}>
               {cat}
             </button>
