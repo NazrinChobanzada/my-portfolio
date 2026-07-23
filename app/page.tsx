@@ -11,13 +11,9 @@ export default function Home() {
           to { transform: translateX(-50%); }
         }
         .work-card {
-          filter: blur(2px);
-          opacity: 0.6;
-          transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+          transition: transform 0.3s ease;
         }
         .work-card:hover {
-          filter: blur(0);
-          opacity: 1;
           transform: translateY(-4px);
         }
         .nav-link:hover { color: var(--dark) !important; }
@@ -86,13 +82,15 @@ export default function Home() {
           <span style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em' }}>04 Projects</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-         {[
+  
+           {[
             { num: '01', bg: '#E3DDD6', tag: 'SaaS · Document Management', title: 'ArchiveX', desc: 'Designing a complete SaaS platform for digital archiving and intelligent document management', link: '/work/archivex', img: '/archive-cover.png' },
-            { num: '02', bg: '#D8E8D0', tag: 'Mobile · AgTech · Android', title: 'Yonca', desc: 'AI-driven agricultural mobile app for farmers — subsidies, satellite monitoring and crop intelligence', link: '/work/yonca', img: '/home-yonca-cover-2.png' },          
+            { num: '02', bg: '#D8E8D0', tag: 'Mobile · AgTech · Android', title: 'Yonca', desc: 'AI-driven agricultural mobile app for farmers — subsidies, satellite monitoring and crop intelligence', link: '/work/yonca', img: '/home-yonca-cover.png' },
             { num: '03', bg: '#E8E2D9', tag: 'AgTech · B2B SaaS', title: 'Eagro', desc: 'Redesigning an AI-driven agricultural platform for farmers, operators and inspectors', link: '/work/eagro', img: '' },
-            { num: '04', bg: '#DFD8CE', tag: 'EdTech · UX Redesign', title: 'Ingress Academy', desc: 'Redesigning a learning platform for clarity, accessibility and conversion', link: '/work/ingress-academy', img: 'Thumbnail-ingress.jpg' },
+            { num: '04', bg: '#DFD8CE', tag: 'EdTech · UX Redesign', title: 'Ingress Academy', desc: 'Redesigning a learning platform for clarity, accessibility and conversion', link: '/work/ingress-academy', img: '' },
             { num: '05', bg: '#D8D0C4', tag: 'HFE · Conversational AI', title: 'AgroSupport', desc: 'Applying Human Factors Engineering principles to a chatbot for smallholder farmers', link: '/work/agrosupport', img: '' },
-            { num: '06', bg: '#D8E8D0', tag: 'Mobile · AgTech · Android', title: 'Yonca', desc: 'AI-driven agricultural mobile app for farmers — subsidies, satellite monitoring and crop intelligence', link: '/work/yonca', img: '/home-yonca-cover.png' },          ].map(card => (
+            { num: '06', bg: '#CFC8BC', tag: 'Data Visualization · Tableau', title: 'Data Viz & Dashboards', desc: 'UX decisions behind Tableau dashboards — layout, chart selection and technical constraints', link: '/work/data-viz', img: '' },
+          ].map(card => (
             <a key={card.title} href={card.link} className="work-card" style={{ border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
                 {card.img ? (

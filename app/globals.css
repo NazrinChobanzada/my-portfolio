@@ -33,3 +33,69 @@ a {
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  [style*="gap: 6rem"] { gap: 3rem !important; }
+  section, nav, footer { padding-left: 2.5rem !important; padding-right: 2.5rem !important; }
+  div[style*="padding: 3rem 5rem"] { padding: 2rem 2.5rem !important; }
+  section[style*="margin: 0px 5rem 5rem"] { margin: 0 2.5rem 3rem !important; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  /* bütün grid-lər tək sütun */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* bölmə padding-ləri */
+  section, footer { padding: 2.5rem 1.25rem !important; }
+  nav { padding: 1rem 1.25rem !important; }
+  div[style*="padding: 3rem 5rem"] { padding: 1.5rem 1.25rem !important; }
+  section[style*="margin: 0px 5rem 5rem"] { margin: 0 1.25rem 2rem !important; padding: 2rem 1.5rem !important; }
+  a[style*="padding: 3rem 5rem"] { padding: 2rem 1.25rem !important; }
+
+  /* nav sıxlaşdırma */
+  nav > div[style*="gap: 2rem"] { gap: 1rem !important; flex-wrap: wrap !important; }
+  nav a, nav span { font-size: 12px !important; }
+
+  /* şəkil hündürlükləri */
+  img[style*="height: 744px"] { height: 220px !important; }
+  [style*="height: 520px"] { height: 200px !important; }
+  [style*="height: 480px"] { height: 200px !important; }
+  [style*="height: 440px"], [style*="height: 420px"], [style*="height: 400px"] { height: 190px !important; }
+  [style*="height: 360px"], [style*="height: 320px"] { height: 180px !important; }
+  [style*="height: 280px"], [style*="height: 240px"] { height: 160px !important; }
+  [style*="height: 220px"] { height: 150px !important; }
+
+  /* carousel */
+  [style*="calc(71.4%"] { width: 88% !important; }
+
+  /* flex sıralar alt-alta */
+  [style*="display: flex"][style*="gap: 3rem"] { flex-direction: column !important; gap: 1rem !important; }
+  [style*="display: flex"][style*="justify-content: space-between"] { flex-wrap: wrap !important; gap: 1rem !important; }
+
+  /* mətn ölçüləri */
+  h1 { font-size: 2.25rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  p { font-size: 14px !important; }
+
+  /* guidelines detal paneli */
+  div[style*="width: 480px"][style*="position: fixed"] { width: 100% !important; }
+
+  /* masonry qalereya tək sütun */
+  [style*="columns: 2"] { columns: 1 !important; }
+
+  /* cədvəllər üfüqi sürüşsün */
+  div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"],
+  div[style*="grid-template-columns: 1.5fr 1.5fr 2fr"] {
+    grid-template-columns: 2fr 1fr 1fr 1fr !important;
+    min-width: 520px !important;
+  }
+}
