@@ -307,11 +307,7 @@ export default function ArchiveX() {
         
 
         {/* COMPONENTS PREVIEW */}
-         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ background: '#e8e4dc', borderRadius: '12px', overflow: 'hidden', width: '60%' }}>
-            <img src="/components.png" alt="Design System Components" style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }} />
-          </div>
-        </div>
+         
           <div>
             <div style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1rem' }}>Some of the components</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
