@@ -6,12 +6,12 @@ export default function Eagro() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const screens = [
-    { label: 'Soil Intelligence Map', sub: 'Heatmap-based soil data exploration with layer switching', img: '/eagro-screen-1.png' },
-    { label: 'Crop Health Monitoring', sub: 'AI-driven real-time analysis of crop conditions', img: '/eagro-screen-2.png' },
-    { label: 'Crop Variety Recommendation', sub: 'Data-backed planting suggestions based on soil and environment', img: '/eagro-screen-3.png' },
-    { label: 'Modular Dashboard', sub: 'Role-specific content within a shared flexible architecture', img: '/eagro-screen-4.png' },
-    { label: 'Operator View', sub: 'Streamlined monitoring and reporting for field operators', img: '/eagro-screen-5.png' },
-    { label: 'Inspector Flow', sub: 'Structured inspection and compliance reporting interface', img: '/eagro-screen-6.png' },
+    { label: 'Soil Intelligence Map', sub: 'Heatmap-based soil data exploration with layer switching', img: '/7.jpg' },
+    { label: 'Crop Health Monitoring', sub: 'AI-driven real-time analysis of crop conditions', img: '/8.jpg' },
+    { label: 'Crop Variety Recommendation', sub: 'Data-backed planting suggestions based on soil and environment', img: '/3.jpg' },
+    { label: 'Modular Dashboard', sub: 'Role-specific content within a shared flexible architecture', img: '/14.jpg' },
+    { label: 'Operator View', sub: 'Streamlined monitoring and reporting for field operators', img: '/5.jpg' },
+    { label: 'Inspector Flow', sub: 'Structured inspection and compliance reporting interface', img: '/6.jpg' },
   ];
 
   const bgs = ['#E8E2D9', '#DFD8CE', '#D8D0C4', '#CFC8BC', '#C6BFB3', '#BDB8AA'];
@@ -45,7 +45,7 @@ export default function Eagro() {
 
       {/* HEADER */}
       <section style={{ padding: '5rem 5rem 0', borderBottom: '1px solid var(--border)' }}>
-        <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>AgTech · B2B SaaS · Web Platform</div>
+        <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>AgroTech · B2B SaaS · Web Platform</div>
         <h1 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(3rem,6vw,5rem)', fontWeight: 500, lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '3rem' }}>
           Eagro
         </h1>
@@ -143,148 +143,186 @@ export default function Eagro() {
           <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.8rem', fontWeight: 500, lineHeight: 1.2 }}>Understanding how each user role thinks and works</h2>
         </div>
 
-        {/* STEP 01 */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', paddingBottom: '3rem', marginBottom: '3rem', borderBottom: '1px solid var(--border)' }}>
+        {/* STEP 01 — Desk Research */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'start', paddingBottom: '3rem', marginBottom: '3rem', borderBottom: '1px solid var(--border)' }}>
           <div>
-            <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>01 · Desk Research</div>
+            <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Desk Research</div>
             <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Understanding the AgTech landscape</h3>
             <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8 }}>
               Analysed existing AgTech platforms and enterprise SaaS patterns. Reviewed agricultural workflow documentation and compliance requirements across multiple regions.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {[
-              { label: 'Platforms analysed', value: '12+' },
-              { label: 'Key pain points identified', value: '8' },
-              { label: 'Workflow types mapped', value: '5' },
-              { label: 'Compliance frameworks reviewed', value: '3' },
+              { value: '12+', label: 'Platforms analysed', desc: 'AgTech and enterprise SaaS products reviewed for patterns.' },
+              { value: '8', label: 'Pain points identified', desc: 'Recurring frustrations surfaced across all user roles.' },
+              { value: '5', label: 'Workflow types mapped', desc: 'Distinct end-to-end flows documented and compared.' },
+              { value: '3', label: 'Frameworks reviewed', desc: 'Agricultural compliance standards studied for context.' },
             ].map(item => (
-              <div key={item.label} style={{ background: 'var(--warm)', border: '1px solid var(--border)', padding: '1.5rem' }}>
-                <div style={{ fontFamily: 'var(--ff-display)', fontSize: '2.5rem', fontWeight: 400, color: 'var(--accent)', lineHeight: 1, marginBottom: '0.5rem' }}>{item.value}</div>
-                <div style={{ fontSize: '12px', color: 'var(--muted)', fontWeight: 300 }}>{item.label}</div>
+              <div key={item.label} style={{ border: '1px solid var(--border)', borderRadius: '4px', padding: '1.25rem' }}>
+                <div style={{ fontFamily: 'var(--ff-display)', fontSize: '2rem', fontWeight: 400, color: 'var(--accent)', lineHeight: 1, marginBottom: '0.75rem', paddingBottom: '0.75rem', borderBottom: '1px solid var(--border)' }}>{item.value}</div>
+                <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--dark)', marginBottom: '0.35rem' }}>{item.label}</div>
+                <div style={{ fontSize: '11px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.5 }}>{item.desc}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* STEP 02 */}
-        <div style={{ paddingBottom: '3rem', marginBottom: '3rem', borderBottom: '1px solid var(--border)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', marginBottom: '2.5rem' }}>
-            <div>
-              <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>02 · User Interviews</div>
-              <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Listening to farmers, operators & inspectors</h3>
-              <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8 }}>
-                Conducted interviews across all three user roles to understand real workflows, mental models, and daily frustrations with existing tools.
-              </p>
-            </div>
-            <div style={{ background: '#e8e4dc', borderRadius: '12px', padding: '1.25rem' }}>
-              <div style={{ background: '#DFD8CE', borderRadius: '8px', height: '220px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: 'var(--ff-display)', fontSize: '1.2rem', color: 'var(--border)', fontWeight: 300 }}>Affinity Diagram · Interview Insights</span>
-              </div>
-            </div>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2rem' }}>
-            {[
-              { quote: 'I know my fields better than any sensor. What I need is a tool that confirms what I see and tells me what to do next.', role: 'Farmer', region: 'Azerbaijan' },
-              { quote: "The data is there but I don't know what to make of it. I have to call someone every time I need to act on it.", role: 'Farm Operator', region: 'Regional Office' },
-              { quote: 'Every inspection follows a different format. I need one structured flow I can trust every time.', role: 'Field Inspector', region: 'Ministry of Agriculture' },
-            ].map((item, i) => (
-              <div key={i} style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '1.25rem' }}>
-                <p style={{ fontSize: '14px', color: 'var(--dark)', lineHeight: 1.8, marginBottom: '1rem', fontStyle: 'italic' }}>&ldquo;{item.quote}&rdquo;</p>
-                <div style={{ fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{item.role} · {item.region}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* STEP 03 — Personas */}
-        <div style={{ paddingBottom: '3rem', marginBottom: '3rem', borderBottom: '1px solid var(--border)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem' }}>
-            <div>
-              <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>03 · User Personas</div>
-              <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Three roles, three distinct contexts</h3>
-              <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8 }}>
-                Each user group had fundamentally different goals, environments, and expectations from the platform.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}>
+        {/* STEP 02 — User Interviews */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'start', paddingBottom: '3rem', marginBottom: '3rem', borderBottom: '1px solid var(--border)' }}>
+          <div>
+            <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>User Interviews</div>
+            <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Listening to farmers, operators & inspectors</h3>
+            <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8, marginBottom: '2rem' }}>
+              Conducted interviews across all three user roles to understand real workflows, mental models, and daily frustrations with existing tools. The findings were synthesised into an affinity diagram across six recurring themes.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {[
-                { role: 'Farmer', goal: 'Fast field decisions', context: 'In the field, limited connectivity', needs: ['Quick crop health overview', 'Clear seasonal projections', 'Offline capability'] },
-                { role: 'Operator', goal: 'Multi-farm oversight', context: 'Office, high data volume', needs: ['Aggregated analytics', 'Cross-farm comparison', 'Export & reporting'] },
-                { role: 'Inspector', goal: 'Structured compliance', context: 'Field + office hybrid', needs: ['Standardised report flow', 'Photo & note capture', 'Submission tracking'] },
-              ].map(p => (
-                <div key={p.role} style={{ background: 'var(--warm)', border: '1px solid var(--border)', padding: '1.5rem' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                    <span style={{ fontSize: '12px', color: 'var(--cream)', fontWeight: 500 }}>{p.role[0]}</span>
-                  </div>
-                  <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '0.3rem' }}>{p.role}</div>
-                  <div style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '0.5rem' }}>{p.goal}</div>
-                  <div style={{ fontSize: '12px', color: 'var(--muted)', marginBottom: '1rem', fontWeight: 300 }}>{p.context}</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                    {p.needs.map((n, i) => (
-                      <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--accent)', fontSize: '10px', marginTop: '4px' }}>✦</span>
-                        <span style={{ fontSize: '12px', color: 'var(--muted)', fontWeight: 300 }}>{n}</span>
-                      </div>
-                    ))}
-                  </div>
+                { quote: 'I know my fields better than any sensor. What I need is a tool that confirms what I see and tells me what to do next.', role: 'Farmer', region: 'Azerbaijan' },
+                { quote: "The data is there but I don't know what to make of it. I have to call someone every time I need to act on it.", role: 'Farm Operator', region: 'Regional Office' },
+                { quote: 'Every inspection follows a different format. I need one structured flow I can trust every time.', role: 'Field Inspector', region: 'Ministry of Agriculture' },
+              ].map((item, i) => (
+                <div key={i} style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '1.25rem' }}>
+                  <p style={{ fontSize: '13px', color: 'var(--dark)', lineHeight: 1.7, marginBottom: '0.6rem', fontStyle: 'italic' }}>&ldquo;{item.quote}&rdquo;</p>
+                  <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{item.role} · {item.region}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ background: 'var(--warm)', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.75rem' }}>
+            <div style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--muted)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Affinity Diagram · Synthesised Interview Insights</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+              {[
+                { theme: 'Information Overload', color: '#5a7a8a', notes: [
+                  { t: 'Data clutter & poor hierarchy', d: 'Screens filled with too much data; hard to spot what needs attention.' },
+                  { t: 'Difficult satellite interpretation', d: 'Complex imagery and maps lack a clear visual hierarchy.' },
+                  { t: 'Hidden critical alerts', d: 'Important notifications get buried, causing loss of awareness.' },
+                ] },
+                { theme: 'Decision Support', color: '#8a7a4a', notes: [
+                  { t: 'Need for actionable guidance', d: 'Users want suggested next steps, not just raw data.' },
+                  { t: 'Confidence & urgency cues', d: 'Visual urgency and confidence levels build trust.' },
+                  { t: 'Support, not replace', d: 'AI should explain reasoning, not override judgment.' },
+                ] },
+                { theme: 'Inspection Workflow', color: '#6a8a5a', notes: [
+                  { t: 'Process inconsistencies', d: 'Every inspector follows a different process by region.' },
+                  { t: 'Manual & paper bottlenecks', d: 'Reporting slowed by manual entry and paper.' },
+                  { t: 'Approval delays', d: 'Status tracking unclear; approvals need follow-up.' },
+                ] },
+                { theme: 'Communication', color: '#7a6a9a', notes: [
+                  { t: 'Coordination gaps', d: 'Recommendations arrive after the optimal window.' },
+                  { t: 'Fragmented history', d: 'Messaging and manual follow-ups scatter the record.' },
+                  { t: 'No shared visibility', d: 'Stakeholders lack a single unified data view.' },
+                ] },
+                { theme: 'Trust & Transparency', color: '#5a6a9a', notes: [
+                  { t: 'Data provenance & evidence', d: 'Trust builds when recommendations cite sources.' },
+                  { t: 'Explainability in AI', d: 'Users hesitate to approve without clear reasoning.' },
+                  { t: 'Recency & verification', d: 'Field observations trusted more than automation.' },
+                ] },
+                { theme: 'Accessibility & Usability', color: '#9a6a5a', notes: [
+                  { t: 'Field-specific interface', d: 'Glove-friendly, high-contrast for sunlight.' },
+                  { t: 'Offline access & speed', d: 'Critical workflows must work without a connection.' },
+                  { t: 'Navigation efficiency', d: 'Fewer clicks and faster search to reach data.' },
+                ] },
+              ].map(group => (
+                <div key={group.theme} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  <div style={{ background: group.color, color: '#fff', borderRadius: '4px', padding: '0.6rem 0.5rem', fontSize: '10px', fontWeight: 600, letterSpacing: '0.03em', textAlign: 'center', lineHeight: 1.3, textTransform: 'uppercase', minHeight: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{group.theme}</div>
+                  {group.notes.map((n, i) => (
+                    <div key={i} style={{ background: 'var(--cream)', border: `1px solid ${group.color}33`, borderTop: `2px solid ${group.color}`, borderRadius: '4px', padding: '0.6rem 0.6rem', flex: 1 }}>
+                      <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--dark)', marginBottom: '0.3rem', lineHeight: 1.3 }}>{n.t}</div>
+                      <div style={{ fontSize: '9px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.4 }}>{n.d}</div>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* STEP 04 — Benchmark Analysis */}
-        <div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', marginBottom: '2rem' }}>
-            <div>
-              <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>04 · Benchmark Analysis</div>
-              <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Learning from established platforms</h3>
-              <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8 }}>
-                I studied leading satellite-based agricultural platforms to identify which patterns had proven themselves across markets — and which carried assumptions that would not hold in this context.
-              </p>
-            </div>
-            <div style={{ background: '#e8e4dc', borderRadius: '12px', padding: '1.5rem' }}>
-              <div style={{ background: 'var(--cream)', borderRadius: '8px', overflow: 'hidden' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr' }}>
-                  {['Capability', 'OneSoil', 'EOSDA', 'Eagro'].map(h => (
-                    <div key={h} style={{ background: 'var(--dark)', padding: '0.9rem 1.25rem', fontSize: '11px', color: 'var(--cream)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{h}</div>
-                  ))}
-                  {[
-                    { name: 'Season-long field history', vals: ['✓', '✓', '✓'] },
-                    { name: 'Vegetation index layers', vals: ['✓', '✓', '✓'] },
-                    { name: 'Zone-level field analysis', vals: ['✓', '✓', '✓'] },
-                    { name: 'Predictive, non-prescriptive', vals: ['✗', '✗', '✓'] },
-                    { name: 'Multi-role access', vals: ['✗', '✗', '✓'] },
-                    { name: 'Government system integration', vals: ['✗', '✗', '✓'] },
-                    { name: 'Variable-rate application maps', vals: ['✓', '✓', '✗'] },
-                    { name: 'Subscription-gated features', vals: ['✓', '✓', '✗'] },
-                  ].map(row => (
-                    <div key={row.name} style={{ display: 'contents' }}>
-                      <div style={{ background: 'var(--cream)', padding: '0.9rem 1.25rem', fontSize: '13px', fontWeight: 300, borderTop: '1px solid var(--border)', color: 'var(--dark)' }}>{row.name}</div>
-                      {row.vals.map((v, vi) => (
-                        <div key={vi} style={{ background: vi === 2 ? 'var(--warm)' : 'var(--cream)', padding: '0.9rem 1.25rem', fontSize: '14px', borderTop: '1px solid var(--border)', borderLeft: '1px solid var(--border)', color: v === '✓' ? '#5a8a5a' : '#c0b8b0', fontWeight: 500, textAlign: 'center' }}>{v}</div>
-                      ))}
+        {/* STEP 03 — Personas */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'start', paddingBottom: '3rem', marginBottom: '3rem', borderBottom: '1px solid var(--border)' }}>
+          <div>
+            <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>User Personas</div>
+            <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Three roles, three distinct contexts</h3>
+            <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8 }}>
+              Each user group had fundamentally different goals, environments, and expectations from the platform.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}>
+            {[
+              { role: 'Farmer', goal: 'Fast field decisions', context: 'In the field, limited connectivity', needs: ['Quick crop health overview', 'Clear seasonal projections', 'Offline capability'] },
+              { role: 'Operator', goal: 'Multi-farm oversight', context: 'Office, high data volume', needs: ['Aggregated analytics', 'Cross-farm comparison', 'Export & reporting'] },
+              { role: 'Inspector', goal: 'Structured compliance', context: 'Field + office hybrid', needs: ['Standardised report flow', 'Photo & note capture', 'Submission tracking'] },
+            ].map(p => (
+              <div key={p.role} style={{ border: '1px solid var(--border)', borderRadius: '4px', padding: '1.5rem' }}>
+                <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '12px', color: 'var(--cream)', fontWeight: 500 }}>{p.role[0]}</span>
+                </div>
+                <div style={{ fontSize: '14px', fontWeight: 500, marginBottom: '0.3rem' }}>{p.role}</div>
+                <div style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '0.5rem' }}>{p.goal}</div>
+                <div style={{ fontSize: '12px', color: 'var(--muted)', marginBottom: '1rem', fontWeight: 300 }}>{p.context}</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', borderTop: '1px solid var(--border)', paddingTop: '1rem' }}>
+                  {p.needs.map((n, i) => (
+                    <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+                      <span style={{ color: 'var(--accent)', fontSize: '10px', marginTop: '4px' }}>✦</span>
+                      <span style={{ fontSize: '12px', color: 'var(--muted)', fontWeight: 300 }}>{n}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2rem', marginTop: '2rem' }}>
-            {[
-              { num: '01', finding: 'Established visual conventions — vegetation layers, season history, zone analysis — were adopted rather than reinvented. A familiar visual language removes learning cost.' },
-              { num: '02', finding: 'Variable-rate mapping was excluded: it depends on machinery not widely available locally. A feature users cannot act on erodes trust in everything around it.' },
-              { num: '03', finding: 'Multi-role access and government integration had no precedent in the platforms studied — these were designed from the local context rather than borrowed.' },
-            ].map(item => (
-              <div key={item.num} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '11px', color: 'var(--accent)', fontWeight: 500, minWidth: '24px', paddingTop: '2px' }}>{item.num}</span>
-                <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8, margin: 0 }}>{item.finding}</p>
-              </div>
             ))}
           </div>
         </div>
+
+        {/* STEP 04 — Benchmark Analysis */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'start' }}>
+          <div>
+            <div style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Benchmark Analysis</div>
+            <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.3, marginBottom: '1rem' }}>Learning from established platforms</h3>
+            <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8, marginBottom: '2rem' }}>
+              I studied leading satellite-based agricultural platforms to identify which patterns had proven themselves across markets — and which carried assumptions that would not hold in this context.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {[
+                { finding: 'Established visual conventions — vegetation layers, season history, zone analysis — were adopted rather than reinvented. A familiar visual language removes learning cost.' },
+                { finding: 'Variable-rate mapping was excluded: it depends on machinery not widely available locally. A feature users cannot act on erodes trust in everything around it.' },
+                { finding: 'Multi-role access and government integration had no precedent in the platforms studied — these were designed from the local context rather than borrowed.' },
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--accent)', fontSize: '11px', marginTop: '4px', flexShrink: 0 }}>✦</span>
+                  <p style={{ fontSize: '12px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>{item.finding}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{ border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden', alignSelf: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr' }}>
+              {['Capability', 'OneSoil', 'EOSDA', 'Eagro'].map(h => (
+                <div key={h} style={{ background: 'var(--dark)', padding: '0.9rem 1.25rem', fontSize: '11px', color: 'var(--cream)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{h}</div>
+              ))}
+              {[
+                { name: 'Season-long field history', vals: ['✓', '✓', '✓'] },
+                { name: 'Vegetation index layers', vals: ['✓', '✓', '✓'] },
+                { name: 'Zone-level field analysis', vals: ['✓', '✓', '✓'] },
+                { name: 'Predictive, non-prescriptive', vals: ['✗', '✗', '✓'] },
+                { name: 'Multi-role access', vals: ['✗', '✗', '✓'] },
+                { name: 'Government system integration', vals: ['✗', '✗', '✓'] },
+                { name: 'Variable-rate application maps', vals: ['✓', '✓', '✗'] },
+                { name: 'Subscription-gated features', vals: ['✓', '✓', '✗'] },
+              ].map(row => (
+                <div key={row.name} style={{ display: 'contents' }}>
+                  <div style={{ background: 'var(--cream)', padding: '0.9rem 1.25rem', fontSize: '13px', fontWeight: 300, borderTop: '1px solid var(--border)', color: 'var(--dark)' }}>{row.name}</div>
+                  {row.vals.map((v, vi) => (
+                    <div key={vi} style={{ background: vi === 2 ? 'var(--warm)' : 'var(--cream)', padding: '0.9rem 1.25rem', fontSize: '14px', borderTop: '1px solid var(--border)', borderLeft: '1px solid var(--border)', color: v === '✓' ? '#5a8a5a' : '#c0b8b0', fontWeight: 500, textAlign: 'center' }}>{v}</div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
+
+          
 
       {/* QUOTE */}
       <section style={{ ...sec, background: 'var(--warm)' }}>
@@ -309,17 +347,16 @@ export default function Eagro() {
             </p>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'var(--border)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0.75rem' }}>
           {[
             { num: '01', title: 'Accumulated record', desc: 'Every season adds to the field history — vegetation indices, soil analysis, declared crops, and observed conditions.' },
             { num: '02', title: 'Pattern analysis', desc: 'The system reads how the field behaved across seasons, comparing it against regional and climatic patterns.' },
             { num: '03', title: 'Projection', desc: 'Likely outcomes are surfaced — suitability for specific crops, expected stress periods, and areas requiring attention.' },
             { num: '04', title: 'Human decision', desc: 'The user interprets the projection against their own knowledge of the land and decides. The system does not act on their behalf.' },
           ].map(item => (
-            <div key={item.num} style={{ background: 'var(--cream)', padding: '1.5rem' }}>
-              <div style={{ fontSize: '10px', color: 'var(--border)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>{item.num}</div>
-              <div style={{ fontSize: '13px', fontWeight: 500, marginBottom: '0.5rem' }}>{item.title}</div>
-              <div style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.7 }}>{item.desc}</div>
+            <div key={item.num} style={{ border: '1px solid var(--border)', borderRadius: '4px', padding: '1.5rem' }}>
+              <div style={{ fontSize: '13px', fontWeight: 500, color: 'var(--dark)', marginBottom: '0.5rem' }}>{item.title}</div>
+              <div style={{ fontSize: '12px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.7 }}>{item.desc}</div>
             </div>
           ))}
         </div>
@@ -331,23 +368,23 @@ export default function Eagro() {
           <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1rem' }}>AI-Driven Decision Support</div>
           <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.8rem', fontWeight: 500, lineHeight: 1.2, maxWidth: '560px' }}>Intelligence embedded directly into workflows</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1px', background: 'var(--border)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
           {[
             { title: 'Crop Health Monitoring', desc: 'Satellite-based analysis of crop conditions, surfacing potential issues before they escalate. Reduces reliance on manual inspection and allows earlier, more confident responses.' },
             { title: 'Crop Variety Recommendation', desc: 'Based on soil data, historical performance, and environmental conditions, the platform surfaces which crop varieties have performed well under comparable conditions.' },
             { title: 'Soil Intelligence Map', desc: 'The central decision-making tool. Transforms complex soil datasets into an intuitive visual experience through heatmaps, switchable data layers, and zone-level analysis.' },
           ].map(item => (
-            <div key={item.title} style={{ background: 'var(--cream)', padding: '2rem' }}>
-              <div style={{ width: '32px', height: '2px', background: 'var(--accent)', marginBottom: '1.25rem' }} />
-              <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.2rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.3 }}>{item.title}</h3>
-              <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8, margin: 0 }}>{item.desc}</p>
+            <div key={item.title} style={{ border: '1px solid var(--border)', borderRadius: '4px', padding: '1.5rem' }}>
+              <div style={{ fontSize: '13px', fontWeight: 500, color: 'var(--dark)', marginBottom: '0.5rem' }}>{item.title}</div>
+              <div style={{ fontSize: '12px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.7 }}>{item.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* AI FRAME */}
-      <Frame bg="#D8D0C4" label="Soil Intelligence Map · Layer View" />
+      <img src="/soil-map.png" alt="ArchiveX Platform" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+
 
       {/* DESIGN SYSTEM */}
       <section style={sec}>
