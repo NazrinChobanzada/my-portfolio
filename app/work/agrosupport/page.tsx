@@ -2,16 +2,95 @@
 import Link from "next/link";
 import { useState } from "react";
 
+function FermerSplash() {
+  return (
+<div style={{ position: 'relative', width: '100%', height: '360px', background: '#2B2891', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>      <style>{`
+        @keyframes fs-glow { from { opacity: 0.7; } to { opacity: 1; } }
+        @keyframes fs-logoEntry { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+        @keyframes fs-blink {
+          0% { transform: translateY(-55%) scaleY(0); } 8% { transform: translateY(-55%) scaleY(1); }
+          88% { transform: translateY(-55%) scaleY(1); } 92% { transform: translateY(-55%) scaleY(0.1); }
+          96% { transform: translateY(-55%) scaleY(1); } 100% { transform: translateY(-55%) scaleY(1); }
+        }
+        @keyframes fs-smileReveal { from { opacity: 0; transform: scaleX(0); } to { opacity: 1; transform: scaleX(1); } }
+        @keyframes fs-antennaGrow { from { opacity: 0; transform: translateX(-50%) scaleY(0); } to { opacity: 1; transform: translateX(-50%) scaleY(1); } }
+        @keyframes fs-antennaPulse { from { box-shadow: 0 0 6px rgba(111,182,243,0.6); transform: scale(1); } to { box-shadow: 0 0 14px rgba(111,182,243,1); transform: scale(1.2); } }
+        @keyframes fs-leavesGrow { from { opacity: 0; transform: scale(0) rotate(-20deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+        @keyframes fs-brandSlide { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fs-dotBounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-5px); opacity: 1; } }
+
+        .fs-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(109,124,242,0.35) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(111,182,243,0.15) 0%, transparent 50%), radial-gradient(ellipse at 20% 20%, rgba(109,92,240,0.15) 0%, transparent 50%); animation: fs-glow 3s ease-in-out infinite alternate; }
+        .fs-splash { display: flex; flex-direction: column; align-items: center; gap: 28px; position: relative; z-index: 1; }
+        .fs-logo-wrap { width: 140px; height: 140px; position: relative; animation: fs-logoEntry 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s both; }
+        .fs-logo-body { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-45%); width: 96px; height: 76px; border-radius: 32px; background: linear-gradient(160deg, #F4F6FF 0%, #DBE4FF 100%); box-shadow: 0 8px 32px rgba(43,40,145,0.3); }
+        .fs-ear { position: absolute; width: 12px; height: 28px; border-radius: 6px; background: linear-gradient(180deg, #6FB6F3 0%, #4448C2 100%); top: 50%; transform: translateY(-50%); }
+        .fs-ear.left { left: -6px; } .fs-ear.right { right: -6px; }
+        .fs-eye { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #2B2891; top: 50%; transform: translateY(-55%); animation: fs-blink 3.5s ease-in-out 1.4s infinite; }
+        .fs-eye.left { left: 22px; } .fs-eye.right { right: 22px; }
+        .fs-smile { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); width: 36px; height: 18px; overflow: hidden; }
+        .fs-smile svg { animation: fs-smileReveal 0.6s cubic-bezier(0.34,1.56,0.64,1) 2s both; }
+        .fs-antenna { position: absolute; left: 50%; top: 6px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; animation: fs-antennaGrow 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.8s both; transform-origin: bottom center; }
+        .fs-antenna-stem { width: 4px; height: 28px; border-radius: 2px; background: linear-gradient(180deg, #6FB6F3 0%, #4448C2 100%); }
+        .fs-antenna-dot { width: 8px; height: 8px; border-radius: 50%; background: #6FB6F3; margin-bottom: -2px; animation: fs-antennaPulse 1s ease-in-out 1.6s infinite alternate; }
+        .fs-leaf { position: absolute; top: -4px; animation: fs-leavesGrow 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.6s both; transform-origin: bottom center; }
+        .fs-leaf.left { left: 20px; } .fs-leaf.right { right: 20px; }
+        .fs-stem { position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 4px; height: 14px; border-radius: 2px; background: linear-gradient(180deg, #4448C2 0%, #6FB6F3 100%); }
+        .fs-brand { text-align: center; animation: fs-brandSlide 0.5s ease-out 1s both; }
+        .fs-brand-name { font-size: 28px; font-weight: 700; color: white; letter-spacing: -0.03em; }
+        .fs-brand-tag { font-size: 14px; color: rgba(219,228,255,0.65); margin-top: 6px; }
+        .fs-loading { display: flex; gap: 6px; }
+        .fs-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(219,228,255,0.4); animation: fs-dotBounce 1.2s ease-in-out infinite; }
+        .fs-dot:nth-child(2) { animation-delay: 0.2s; } .fs-dot:nth-child(3) { animation-delay: 0.4s; }
+      `}</style>
+      <div className="fs-glow" />
+      <div className="fs-splash">
+        <div className="fs-logo-wrap">
+          <div className="fs-leaf left">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 24C14 14 4 8 2 2C8 4 18 10 14 24Z" fill="url(#fsl)"/><defs><linearGradient id="fsl" x1="2" y1="2" x2="14" y2="24" gradientUnits="userSpaceOnUse"><stop stopColor="#9FE0F3"/><stop offset="1" stopColor="#4448C2"/></linearGradient></defs></svg>
+          </div>
+          <div className="fs-leaf right">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 24C14 14 24 8 26 2C20 4 10 10 14 24Z" fill="url(#fsr)"/><defs><linearGradient id="fsr" x1="26" y1="2" x2="14" y2="24" gradientUnits="userSpaceOnUse"><stop stopColor="#9FE0F3"/><stop offset="1" stopColor="#4448C2"/></linearGradient></defs></svg>
+          </div>
+          <div className="fs-antenna">
+            <div className="fs-antenna-dot" />
+            <div className="fs-antenna-stem" />
+          </div>
+          <div className="fs-logo-body">
+            <div className="fs-ear left" />
+            <div className="fs-ear right" />
+            <div className="fs-eye left" />
+            <div className="fs-eye right" />
+            <div className="fs-smile">
+              <svg width="36" height="18" viewBox="0 0 36 18" fill="none"><path d="M4 4C10 14 26 14 32 4" stroke="#2B2891" strokeWidth="3" strokeLinecap="round" fill="none"/></svg>
+            </div>
+          </div>
+          <div className="fs-stem" />
+        </div>
+        <div className="fs-brand">
+          <div className="fs-brand-name">Fermer Chatbot</div>
+          <div className="fs-brand-tag">Aqrar subsidiya məlumat assistenti</div>
+        </div>
+        <div className="fs-loading">
+          <div className="fs-dot" /><div className="fs-dot" /><div className="fs-dot" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function AgroSupport() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const screens = [
-    { label: 'Opening screen', sub: 'Single question, no choice overload — cognitive load principle applied' },
-    { label: 'Confirmation step', sub: 'Read-back protocol before giving financial figures' },
-    { label: 'Subsidy result', sub: 'Structured card with plain language and verification disclaimer' },
-  ];
+    { label: 'Opening screen', sub: 'Single question, no choice overload — cognitive load principle applied', img: '/chatbot-1.png' },
+    { label: 'Confirmation step', sub: 'Read-back protocol before giving financial figures', img: '/chatbot-2.png' },
+    { label: 'Subsidy result', sub: 'Structured, plain-language answer with verification reminder', img: '/chatbot-cover.png' },  ];
+    
+ 
 
-  const bgs = ['#E8E2D9', '#DFD8CE', '#D8D0C4'];
+
+  const bgs = ['#E8E2D9', '#DFD8CE', '#D8D0C4', '#CFC8BC', '#C6BFB3', '#BDB8AA'];
+
 
   const sec: React.CSSProperties = {
     padding: '4rem 5rem',
@@ -54,10 +133,8 @@ export default function AgroSupport() {
       </section>
 
       {/* COVER */}
-      <div style={{ padding: '3rem 5rem', borderBottom: '1px solid var(--border)', background: 'var(--warm)' }}>
-        <div style={{ background: '#e8e4dc', borderRadius: '16px', overflow: 'hidden', height: '520px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <span style={{ width: 'var(--ff-display)', fontSize: '2rem', color: 'var(--border)', fontWeight: 300 }}>AgroSupport · Chatbot Interface</span>
-        </div>
+      <div style={{ width: '100%', height: '786px', overflow: 'hidden' }}>
+          <img src="/chatbot-main.png" alt="Ingress Academy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
 
       {/* OVERVIEW */}
@@ -259,11 +336,12 @@ export default function AgroSupport() {
             {screens.map((screen, i) => (
               <div key={i} onClick={() => setActiveSlide(i)}
                 style={{ flexShrink: 0, width: 'calc(71.4% - 1rem)', cursor: i !== activeSlide ? 'pointer' : 'default', transition: 'all 0.4s ease', opacity: i === activeSlide ? 1 : 0.45, transform: i === activeSlide ? 'scale(1)' : 'scale(0.95)' }}>
-                <div style={{ background: '#e8e4dc', borderRadius: '16px', padding: '1.25rem' }}>
-                  <div style={{ borderRadius: '10px', width: '100%', height: '480px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: bgs[i] }}>
-                    <span style={{ width: 'var(--ff-display)', fontSize: '1.5rem', color: 'var(--border)', fontWeight: 300 }}>{screen.label}</span>
+                <div style={{ borderRadius: '10px', width: '100%', height: '480px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: bgs[i] }}>
+                    {screen.img
+                      ? <img src={screen.img} alt={screen.label} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+                      : <span style={{ fontFamily: 'var(--ff-display)', fontSize: '1.5rem', color: 'var(--border)', fontWeight: 300 }}>{screen.label}</span>
+                    }
                   </div>
-                </div>
               </div>
             ))}
           </div>
@@ -321,6 +399,22 @@ export default function AgroSupport() {
         </div>
       </section>
 
+      {/* THE FIRST FIVE SECONDS */}
+      <section style={{ borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'stretch' }}>
+          <div style={{ padding: '2.5rem 0 2.5rem 5rem', alignSelf: 'center' }}>
+            <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>The First Five Seconds</div>
+            <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.5rem', fontWeight: 500, lineHeight: 1.2, marginBottom: '0.75rem' }}>Before a single word is exchanged</h2>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.8, margin: 0 }}>
+              For a hesitant user, the launch screen answers an unspoken question before the conversation begins — <em>can I trust this?</em> The friendly character and calm motion were designed to lower the intimidation barrier from the very first moment.
+            </p>
+          </div>
+          <div style={{ overflow: 'hidden' }}>
+            <FermerSplash />
+          </div>
+        </div>
+      </section>
+
       {/* REFLECTION */}
       <section style={{ ...sec, background: 'var(--dark)', color: 'var(--cream)', borderBottom: 'none' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem' }}>
@@ -343,6 +437,9 @@ export default function AgroSupport() {
           </div>
         </div>
       </section>
+
+    
+
 
       {/* NEXT */}
       <Link href="/work/archivex" className="next-link"
