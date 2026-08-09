@@ -1,4 +1,93 @@
 "use client";
+import { useEffect, useRef } from "react";
+
+function UnXHero() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    const U = root.querySelector<HTMLElement>('.unx-U');
+    const N = root.querySelector<HTMLElement>('.unx-n');
+    const X = root.querySelector<HTMLElement>('.unx-X');
+    const LINE = root.querySelector<HTMLElement>('.unx-line');
+    const TAG = root.querySelector<HTMLElement>('.unx-tag');
+    const HINT = root.querySelector<HTMLElement>('.unx-hint');
+    if (!U || !N || !X || !LINE || !TAG || !HINT) return;
+
+    let cancelled = false;
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+    const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const wait = (ms: number) => new Promise(r => setTimeout(r, ms));
+    const tween = (from: number, to: number, dur: number, ease: (t: number) => number, cb: (v: number) => void) =>
+      new Promise<void>(res => {
+        const s = performance.now();
+        function f(n: number) {
+          if (cancelled) return res();
+          const r = Math.min((n - s) / dur, 1);
+          cb(lerp(from, to, ease(r)));
+          r < 1 ? requestAnimationFrame(f) : res();
+        }
+        requestAnimationFrame(f);
+      });
+
+    async function run() {
+      await wait(300);
+      await Promise.all([
+        tween(0, 1, 1000, easeOut, v => (U!.style.opacity = String(v))),
+        tween(28, -3, 1000, easeOut, v => (U!.style.letterSpacing = v + 'px')),
+        tween(0, 1, 1000, easeOut, v => (X!.style.opacity = String(v))),
+        tween(28, -3, 1000, easeOut, v => (X!.style.letterSpacing = v + 'px')),
+      ]);
+      await wait(600);
+      await Promise.all([
+        tween(0, 0.45, 800, easeOut, v => (N!.style.opacity = String(v))),
+        tween(0, 90, 800, easeOut, v => (N!.style.maxWidth = v + 'px')),
+      ]);
+      await wait(300);
+      await Promise.all([
+        tween(0, 1, 500, easeOut, v => (LINE!.style.opacity = String(v))),
+        tween(0, 32, 500, easeInOut, v => (LINE!.style.width = v + 'px')),
+      ]);
+      await wait(200);
+      await tween(0, 1, 500, easeOut, v => (TAG!.style.opacity = String(v)));
+      await wait(100);
+      await tween(0, 1, 500, easeOut, v => (HINT!.style.opacity = String(v)));
+      await wait(2200);
+      await tween(1, 0, 800, easeInOut, v => (HINT!.style.opacity = String(v)));
+    }
+    run();
+    return () => { cancelled = true; };
+  }, []);
+
+  return (
+    <div ref={ref} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <style>{`
+        .unx-wrap { display: flex; flex-direction: column; align-items: center; }
+        .unx-wordmark { display: flex; align-items: baseline; line-height: 1; }
+        .unx-U { font-family: 'IBM Plex Sans', sans-serif; font-size: 108px; font-weight: 800; color: var(--dark); letter-spacing: -3px; display: inline-block; opacity: 0; }
+        .unx-n { font-family: var(--ff-display); font-size: 108px; font-weight: 300; font-style: italic; color: var(--muted); opacity: 0.5; letter-spacing: -3px; display: inline-block; overflow: hidden; white-space: nowrap; max-width: 0; }        .unx-X-wrap { position: relative; display: inline-block; }
+        .unx-X { font-family: 'IBM Plex Sans', sans-serif; font-size: 108px; font-weight: 800; color: var(--dark); letter-spacing: -3px; display: inline-block; opacity: 0; }
+        .unx-line { position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); height: 2px; background: var(--dark); border-radius: 2px; width: 0; opacity: 0; }
+        .unx-tag { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; letter-spacing: 5px; color: var(--muted); font-weight: 500; text-transform: uppercase; margin-top: 22px; opacity: 0; }
+        .unx-hint { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; color: var(--border); letter-spacing: 1px; margin-top: 16px; opacity: 0; }
+      `}</style>
+      <div className="unx-wrap">
+        <div className="unx-wordmark">
+          <span className="unx-U">U</span>
+          <span className="unx-n">n</span>
+          <div className="unx-X-wrap">
+            <span className="unx-X">X</span>
+            <span className="unx-line" />
+          </div>
+        </div>
+        <p className="unx-tag">product &amp; ux design</p>
+        <p className="unx-hint">UX — experience &nbsp;·&nbsp; n — Nazrin</p>
+      </div>
+    </div>
+  );
+}
 
 const PAD = '4rem 5rem';
 
@@ -34,33 +123,44 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ padding: '3.5rem 5rem 0' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem' }}>
-          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />
-          <span style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase' }}>Available for work</span>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          {/* LEFT */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem' }}>
+              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />
+              <span style={{ fontSize: '12px', letterSpacing: '0.15em', color: 'var(--muted)', textTransform: 'uppercase' }}>Available for work</span>
+            </div>
+
+            <h1 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '800px', marginBottom: '2rem' }}>
+              Hello, I&apos;m Nazrin —<br />
+              a product designer<br />
+              <span style={{ color: 'var(--muted)', fontWeight: 300, fontStyle: 'italic' }}>crafting experiences</span><br />
+              <span style={{ color: 'var(--muted)', fontWeight: 300 }}>people love.</span>
+            </h1>
+
+            <p style={{ fontSize: '16px', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.9, marginBottom: '2.5rem', fontWeight: 300 }}>
+              I turn complex problems into clear, elegant interfaces — currently open to full-time roles and freelance.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <a href="#work" style={{ background: 'var(--dark)', color: 'var(--cream)', padding: '0.75rem 1.75rem', fontSize: '13px', letterSpacing: '0.05em', borderRadius: '4px', textDecoration: 'none' }}>
+                View work
+              </a>
+              <a href="#contact" style={{ border: '1px solid var(--border)', padding: '0.75rem 1.75rem', fontSize: '13px', letterSpacing: '0.05em', borderRadius: '4px', textDecoration: 'none', color: 'var(--dark)' }}>
+                Contact
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT — logo */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <UnXHero />
+          </div>
         </div>
 
-        <h1 style={{ width: 'var(--ff-display)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 500, lineHeight: 1.05, letterSpacing: '-0.02em', maxWidth: '800px', marginBottom: '2rem' }}>
-          Hello, I&apos;m Nazrin —<br />
-          a product designer<br />
-          <span style={{ color: 'var(--muted)', fontWeight: 300, fontStyle: 'italic' }}>crafting experiences</span><br />
-          <span style={{ color: 'var(--muted)', fontWeight: 300 }}>people love.</span>
-        </h1>
-
-        <p style={{ fontSize: '16px', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.9, marginBottom: '2.5rem', fontWeight: 300 }}>
-          I turn complex problems into clear, elegant interfaces — currently open to full-time roles and freelance.
-        </p>
-
-        <div style={{ display: 'flex', gap: '1rem', marginBottom: '4rem' }}>
-          <a href="#work" style={{ background: 'var(--dark)', color: 'var(--cream)', padding: '0.75rem 1.75rem', fontSize: '13px', letterSpacing: '0.05em', borderRadius: '4px', textDecoration: 'none' }}>
-            View work
-          </a>
-          <a href="#contact" style={{ border: '1px solid var(--border)', padding: '0.75rem 1.75rem', fontSize: '13px', letterSpacing: '0.05em', borderRadius: '4px', textDecoration: 'none', color: 'var(--dark)' }}>
-            Contact
-          </a>
-        </div>
-
-        <div style={{ borderBottom: '1px solid var(--border)' }} />
+        <div style={{ borderBottom: '1px solid var(--border)', marginTop: '4rem' }} />
       </section>
+
 
       {/* MARQUEE */}
       <div style={{ overflow: 'hidden', padding: '1.25rem 0', borderBottom: '1px solid var(--border)' }}>
