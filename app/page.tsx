@@ -179,7 +179,7 @@ export default function Home() {
       <section id="work" style={{ padding: PAD }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--border)', paddingBottom: '1rem', marginBottom: '3rem' }}>
           <h2 style={{ width: 'var(--ff-display)', fontSize: '2rem', fontWeight: 400 }}>Selected Works</h2>
-          <span style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em' }}>04 Projects</span>
+          <span style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em' }}>09 Projects</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
   
@@ -190,23 +190,28 @@ export default function Home() {
             { num: '04', bg: '#DFD8CE', tag: 'EdTech · UX Redesign', title: 'Ingress Academy', desc: 'Redesigning a learning platform for clarity, accessibility and conversion', link: '/work/ingress-academy', img: '/Thumbnail-ingress.jpg' },
             { num: '05', bg: '#D8D0C4', tag: 'HFE · Conversational AI', title: 'AgroSupport', desc: 'Applying Human Factors Engineering principles to a chatbot for smallholder farmers', link: '/work/agrosupport', img: '/chatbot-main.png' },
             { num: '06', bg: '#C6BFB3', tag: 'GovTech · Satellite AI', title: 'ESUPC', desc: 'Satellite surveillance platform for urban compliance and heritage protection', link: '/work/urbanguard', img: '/thumb-esupc.jpg' },
-            { num: '07', bg: '#CFC8BC', tag: 'Data Visualization · Tableau', title: 'Data Viz & Dashboards', desc: 'UX decisions behind Tableau dashboards — layout, chart selection and technical constraints', link: '/work/data-viz', img: '' },
+            { num: '07', bg: '#CFC8BC', tag: 'Data Visualization · Tableau', title: 'Data Viz & Dashboards', desc: 'UX decisions behind Tableau dashboards — layout, chart selection and technical constraints', link: '/work/data-viz', img: '', soon: true },
+            { num: '08', bg: '#D8E0D0', tag: 'HealthTech · Nutrition AI', title: "Food's Up", desc: 'Calorie tracking and personalised meal recommendations powered by AI', link: '/work/foods-up', img: '', soon: true },
+            { num: '09', bg: '#D0D4DC', tag: 'SaaS · Design Tooling', title: 'UXprism', desc: 'A platform bringing structure and clarity to the UX design process', link: '/work/uxprism', img: '', soon: true },
           ].map(card => (
-            <a key={card.title} href={card.link} className="work-card" style={{ border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', display: 'block', textDecoration: 'none', color: 'inherit' }}>
+            <a key={card.title} href={card.link} className="work-card" style={{ border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', display: 'block', textDecoration: 'none', color: 'inherit', position: 'relative' }}>
               <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
                 {card.img ? (
                   <img src={card.img} alt={card.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 ) : (
-                  <div style={{ width: '100%', height: '100%', background: card.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ width: 'var(--ff-display)', fontSize: '3rem', color: 'var(--border)', fontStyle: 'normal' }}>{card.num}</span>
+                  <div style={{ width: '100%', height: '100%', background: `repeating-linear-gradient(135deg, ${card.bg}, ${card.bg} 12px, var(--warm) 12px, var(--warm) 24px)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <span style={{ fontFamily: 'var(--ff-display)', fontSize: '3rem', color: 'rgba(0,0,0,0.12)', fontStyle: 'normal' }}>{card.num}</span>
                   </div>
                 )}
                 <span style={{ position: 'absolute', top: '1rem', left: '1rem', background: 'var(--cream)', padding: '1px 6px', borderRadius: '4px', fontSize: '10px', letterSpacing: '0.1em', color: 'var(--muted)' }}>{card.tag}</span>
+                {card.soon && (
+                  <span style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'var(--dark)', color: 'var(--cream)', padding: '3px 10px', borderRadius: '20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500 }}>Coming soon</span>
+                )}
               </div>
               <div style={{ padding: '1.5rem', background: 'var(--warm)' }}>
-                <h3 style={{ width: 'var(--ff-display)', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.4rem' }}>{card.title}</h3>
+                <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.4rem' }}>{card.title}</h3>
                 <p style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300 }}>{card.desc}</p>
-                <span style={{ display: 'inline-block', marginTop: '0.8rem', fontSize: '13px', color: 'var(--accent)' }}>View case study →</span>
+                <span style={{ display: 'inline-block', marginTop: '0.8rem', fontSize: '13px', color: 'var(--accent)' }}>{card.soon ? 'Preview →' : 'View case study →'}</span>
               </div>
             </a>
           ))}
