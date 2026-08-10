@@ -281,9 +281,9 @@ export default function Home() {
           <div>
             <div style={{ fontSize: '12px', letterSpacing: '0.12em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Work History</div>
             {[
-              { year: '2023 — Present', role: 'Head of UX/UI Design', company: 'Digital Umbrella · Full-time', desc: 'Led end-to-end design for a SaaS analytics platform used by 50,000+ teams globally.' },
-              { year: '2022 — 2023', role: 'UX/UI Designer', company: 'International Bank of Azerbaijan · Full-time', desc: 'Designed the mobile onboarding experience, improving activation rate by 34%.' },
-              { year: '2018 — 2020', role: 'UI/UX Designer', company: 'Design Studio · Full-time', desc: 'Worked across brand identity, web design, and interactive prototypes for agency clients.' },
+              { year: '2023 — Present', role: 'Head of UX/UI Design', company: 'Digital Umbrella · Full-time', desc: 'Led end-to-end design for a SaaS analytics platforms.' },
+              { year: '2022 — 2023', role: 'UX/UI Designer', company: 'International Bank of Azerbaijan · Full-time', desc: 'Designed the ATM, terminal experience, improving activation.' },
+              { year: '2018 — 2022', role: 'UI/UX Designer', company: 'Cargobus LLC · Full-time', desc: 'Worked across brand identity, web design, and interactive prototypes for logistics clients.' },
             ].map(item => (
               <div key={item.year} style={{ borderLeft: '2px solid var(--border)', paddingLeft: '1.25rem', marginBottom: '1.75rem', position: 'relative' }}>
                 <div style={{ width: '6px', height: '6px', background: 'var(--accent)', borderRadius: '50%', position: 'absolute', left: '-4px', top: '5px' }} />
@@ -295,11 +295,12 @@ export default function Home() {
             ))}
           </div>
           <div>
-            <div style={{ fontSize: '12px', letterSpacing: '0.12em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Education</div>
+            <div style={{ fontSize: '12px', letterSpacing: '0.12em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Education and Certifications</div>
             {[
-              { year: '2014 — 2018', role: 'BA Visual Communication', company: 'University of Design', desc: 'Graduated with honours. Thesis on cognitive load in mobile interfaces.' },
-              { year: '2023', role: 'Google UX Design Certificate', company: 'Google · Coursera', desc: '' },
-              { year: '2022', role: 'Interaction Design Foundation', company: 'Advanced UX Course', desc: '' },
+              
+              { year: '2025', role: 'IAAP Certified Professionals in Accessibility Core Competencies (CPACC)', company: 'International Association of Accessibility Professionals (IAAP)', desc: '', url: 'https://www.credly.com/badges/3f8a5c82-dee5-4c89-b23e-5547168d4c49/linked_in_profile' },
+              { year: '2021', role: 'UX Design Nanodegree', company: 'Udacity', desc: '' },
+              { year: '2016 — 2020', role: 'Computer Science', company: 'Baku State University',  },
             ].map(item => (
               <div key={item.year} style={{ borderLeft: '2px solid var(--border)', paddingLeft: '1.25rem', marginBottom: '1.75rem', position: 'relative' }}>
                 <div style={{ width: '6px', height: '6px', background: 'var(--accent)', borderRadius: '50%', position: 'absolute', left: '-4px', top: '5px' }} />
@@ -307,6 +308,11 @@ export default function Home() {
                 <div style={{ fontWeight: 500, fontSize: '14px', marginBottom: '0.2rem' }}>{item.role}</div>
                 <div style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300 }}>{item.company}</div>
                 {item.desc && <div style={{ fontSize: '13px', color: 'var(--muted)', fontWeight: 300, lineHeight: 1.7, marginTop: '0.4rem' }}>{item.desc}</div>}
+                {item.url && (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'underline', marginTop: '0.4rem', display: 'inline-block' }}>
+                    View certificate
+                  </a>
+                )}
               </div>
             ))}
           </div>
