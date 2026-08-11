@@ -343,7 +343,7 @@ export default function Yonca() {
               </div>
             </div>
             <div style={{ borderRadius: '4px', overflow: 'hidden', height: '360px' }}>
-              <img src="/AI.jpg" alt="AI Intelligence" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+              <img src="/ai-analysis.jpg" alt="AI Intelligence" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
             </div>
           </div>
 
